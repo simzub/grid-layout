@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Grid</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+                "header header"
+                "sidebar content"
+                "footer footer";
+            height: 100vh;
+            margin: 0;
+            background-color: #FFFBE9;
+        }
+
+        .header {
+            background-color: #AD8B73;
+            grid-area: header;
+            text-align: center;
+            color: #FFFFFF
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            padding: 20px;
+            background-color: #E3CAA5;
+        }
+
+        .content {
+            grid-area: content;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px
+        }
+
+        .card {
+            border: 1px solid #CEAB93;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #AD8B73;
+            padding: 20px;
+            text-align: center;
+            color: #FFFFFF
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>
+            Complex Grid Layout
+        </h1>
+    </header>
+    <div class="sidebar">
+        <h2>Sidebar</h2>
+        <p>This is the sidebar content.</p>
+    </div>
+    <div class="content">
+        <div class="card">
+            <h3>Card 1</h3>
+            <p>Conent for card 1.</p>
+        </div>
+        <div class="card">
+            <h3>Card 2</h3>
+            <p>Conent for card 2.</p>
+        </div>
+        <div class="card">
+            <h3>Card 3</h3>
+            <p>Conent for card 3.</p>
+        </div>
+        <div class="card">
+            <h3>Card 4</h3>
+            <p>Conent for card 4.</p>
+        </div>
+        <div class="card">
+            <h3>Card 5</h3>
+            <p>Conent for card 5.</p>
+        </div>
+        <div class="card">
+            <h3>Card 6</h3>
+            <p>Conent for card 6.</p>
+        </div>
+    </div>
+    <footer>Footer Content</footer>
+</body>
+
+</html>
