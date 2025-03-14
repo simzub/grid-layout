@@ -1,0 +1,90 @@
+body {
+    font-family: monospace;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+                "header header"
+                "sidebar content"
+                "footer footer";
+    height: 100vh;
+    margin: 0;
+    background-color: #E3CAA5;
+}
+
+.header {
+    background-color: #AD8B73;
+    grid-area: header;
+    text-align: center;
+    color: #FFFFFF
+}
+
+.sidebar {
+    position: relative;
+    grid-area: sidebar;
+    padding: 20px;
+    background-color: #E3CAA5;
+    width: 300px;
+    transition: width 0.3s ease, padding 0.3s ease;
+    overflow: hidden;
+
+    & h2, p {
+        width: 260px;
+        transition: opacity 0.1s ease;
+        white-space: normal;
+    }
+}
+
+.sidebar.collapsed {
+    padding: 0;
+    width: 50px;
+
+    & h2, p {
+        opacity: 0;
+        transition: opacity 0.1s ease;
+    }
+}
+
+.content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: #FFFBE9;
+}
+
+.card {
+    border: 5px solid #CEAB93;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #AD8B73;
+    padding: 20px;
+    text-align: center;
+    color: #FFFFFF
+}
+
+.expand {
+    position: absolute;
+    top: 0;
+    inset-inline-end: 0;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #FFFBE9;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        background-color: #CEAB93;
+    }
+}
